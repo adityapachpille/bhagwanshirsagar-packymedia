@@ -1,0 +1,195 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: #000000;
+  background: #f3f4f6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Top bar wrapper */
+.topBarWrapper {
+  margin-bottom: 24px;
+  text-align: center;
+  position: sticky;   /* ✅ keep top bar visible */
+  top: 0;
+  background: #f3f4f6;
+  z-index: 50;
+  padding: 10px 0;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #000000;
+}
+
+/* Top bar */
+.topBar {
+  display: flex;
+  flex-wrap: wrap;        /* ✅ allow wrapping if needed */
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.button {
+  padding: 10px 14px;
+  background: #f47734; /* orange theme */
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.button:hover {
+  background: #760e03;
+  color: #fff;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Canvas wrapper */
+.canvasWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background: white;
+  touch-action: none; /* ✅ important for mobile drag */
+  display: block;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* ✅ subtle shadow */
+  user-select: none; /* ✅ prevent text highlight */
+  cursor: grab;
+}
+
+canvas.dragging {
+  cursor: grabbing;
+}
+
+/* Upload patch */
+.uploadPatch {
+  position: absolute;
+  top: 50%;                /* vertically centered */
+  left: 50px;              /* ✅ anchored to left side */
+  transform: translateY(-50%); /* only vertical centering */
+  width: 130px;
+  padding: 20px;
+  border: 2px dashed #ccc;
+  border-radius: 20px;
+  background: white;
+  color: #333;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* ✅ subtle shadow */
+}
+
+.uploadPatch:hover {
+  background: #f3f4f6;
+}
+
+.uploadPatch p {
+  margin: 0;
+  font-weight: 500;
+  color: #1f2937;
+  font-size: 15px;
+}
+
+/* Footer */
+.footer {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.footerInner {
+  max-width: 1152px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footerText {
+  margin: 0;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 16px;
+}
+
+.footerLink {
+  color: #1f2937;
+  text-decoration: none;
+}
+
+.footerLink:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+  .footerInner {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 12px;
+  }
+
+  .topBar {
+    flex-direction: row;
+    flex-wrap: wrap;          /* ✅ wrap instead of sliding */
+    justify-content: center;  /* ✅ center buttons */
+    gap: 8px;                 /* tighter gap for mobile */
+  }
+
+  .button {
+    flex: 1 1 auto;           /* ✅ shrink to fit */
+    font-size: 14px;
+    white-space: nowrap;
+    min-width: 90px;          /* ✅ keep readable */
+  }
+
+  .uploadPatch {
+    font-size: 14px;
+    padding: 16px;
+    left: 40px; /* slightly tighter on mobile */
+    width: 70px;
+  }
+
+  .footerInner {
+    text-align: center; /* center footer on mobile */
+  }
+}
