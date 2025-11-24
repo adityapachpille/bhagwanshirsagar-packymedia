@@ -9,7 +9,7 @@ export default function CanvasEditor() {
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
   const canvasSize = 600;
-  const [imageWidth, setImageWidth] = useState(170);
+  const [imageWidth, setImageWidth] = useState(180);
   const [imageHeight, setImageHeight] = useState(220);
   const [scale, setScale] = useState(1);
 
@@ -55,7 +55,7 @@ export default function CanvasEditor() {
 
       if (image) {
         ctx.save();
-        const borderRadius = 20;
+        const borderRadius = 30;
         const w = imageWidth * scale;
         const h = imageHeight * scale;
         drawRoundedRect(ctx, position.x, position.y, w, h, borderRadius);
