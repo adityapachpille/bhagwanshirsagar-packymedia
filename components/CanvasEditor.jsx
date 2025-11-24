@@ -111,7 +111,7 @@ export default function CanvasEditor() {
     try {
       await navigator.share({
         title: "मी मतदार",
-        text: "माझा नगराध्यक्ष डॉ. दिलीप रामकृष्ण रत्नपारखी",
+        text: "माझा नगराध्यक्ष भगवानदादा सिताराम क्षीरसागर",
         url: window.location.href,
       });
     } catch {
