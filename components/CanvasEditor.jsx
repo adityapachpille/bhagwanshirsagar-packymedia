@@ -10,7 +10,7 @@ export default function CanvasEditor() {
 
   const canvasSize = 600;
   const [imageWidth, setImageWidth] = useState(180);
-  const [imageHeight, setImageHeight] = useState(200);
+  const [imageHeight, setImageHeight] = useState(150);
   const [scale, setScale] = useState(1);
 
   const [position, setPosition] = useState({
