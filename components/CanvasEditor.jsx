@@ -14,7 +14,7 @@ export default function CanvasEditor() {
   const [scale, setScale] = useState(1);
 
   const [position, setPosition] = useState({
-    x: 57,
+    x: 65,
     y: canvasSize / 2 - imageHeight / 2 + 80,
   });
 
